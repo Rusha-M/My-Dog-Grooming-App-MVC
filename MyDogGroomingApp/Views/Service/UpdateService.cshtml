@@ -1,0 +1,50 @@
+﻿@model MyDogGroomingApp.Models.Service
+
+@{
+    ViewBag.Title = "UpdateService";
+}
+
+<h2>UpdateService</h2>
+
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDogs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDogs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.promotion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.promotion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Code }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

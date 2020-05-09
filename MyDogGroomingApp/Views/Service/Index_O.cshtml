@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MyDogGroomingApp.Models.Service>
+
+@{
+    ViewBag.Title = "Index_O";
+}
+
+<h2>Service</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.promotion)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var service in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => service.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => service.Code)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => service.promotion)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => service.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Add to Cart", "Add", new { code = service.Code }) ||
+
+                @Html.ActionLink("Remove", "Remove", new { code = service.Code })
+            </td>
+        </tr>
+
+    }
+
+</table>
+Total cost of Service cart €@ViewBag.TotalPrice
+
+            ||<tr>
+    <td>
+        @Html.ActionLink("Invoice", "Index_O", "Service/Calculate") ||
+
+    </td>
+</tr>
+
+</table>
